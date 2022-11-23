@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - TEMPLATE</title>
+  <link rel='stylesheet' href='https://www.audiophile.ph/catalog/view/theme/audiophile/stylesheet/main.css'>
+<link rel='stylesheet' href='https://www.audiophile.ph/catalog/view/javascript/bootstrap/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://www.audiophile.ph/catalog/view/javascript/font-awesome/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://www.audiophile.ph/catalog/view/javascript/styles.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:300,600,400,500'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,300,700'>
+<link rel='stylesheet' href='https://www.audiophile.ph/catalog/view/theme/audiophile/stylesheet/animate.css'>
+<link rel='stylesheet' href='https://www.audiophile.ph/catalog/view/theme/audiophile/stylesheet/masonry.css'>
+<link rel='stylesheet' href='https://github.com/pinoynukerz/html/blob/40f6e9f32d5b4b5de7a34d27fd5a79e8fdafb838/responsive.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway:300,400,800'>
+<link rel='stylesheet' href='https://cdn.linearicons.com/free/1.0.0/icon-font.min.css'>
+<link rel='stylesheet' href='https://www.audiophile.ph/frontend/sass/base/_base.scss'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav class="navbar top-nav">
+    <span class="top-bar"></span>
+    <div class="container-fluid">
+      <div class="row upper-nav">
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+           <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="http://www.audiophile.ph/about_us">About Us</a></li>
+              <li><a href="http://www.audiophile.ph/service-center">Service Center</a></li>
+              <li><a href="http://www.audiophile.ph/clearance">Clearance</a></li>
+              <li><a href="http://www.audiophile.ph/shipping-info">Shipping Information</a></li>
+              <li><a href="/index.php?route=information/contact">Contact</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+            <ul class="list-inline list-unstyled nav navbar-right top-icons">
+              <li class="dropdown">
+                <a href="https://www.audiophile.ph/index.php?route=account/account" title="My Account" class="dropdown-toggle icon-holder" data-toggle="dropdown">
+                  <i class="icon-android-person"></i>
+                  <!-- <span class="caret"></span> -->
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li><a href="https://www.audiophile.ph/index.php?route=account/register">Register</a></li>
+                  <li><a href="https://www.audiophile.ph/index.php?route=account/login">Login</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="pull-right icon-holder" href="http://www.audiophile.ph/index.php?route=checkout/cart" title="Shopping Cart">
+                  <i class="icon-ios-cart-outline"></i>
+                </a>
+              </li>
+              <li>
+                <a class="pull-right icon-holder" href="https://www.audiophile.ph/index.php?route=checkout/checkout" title="Checkout"><i class="icon-ios-redo"></i> </a>             </li>
+            </ul>
+          </div>
+      </div>
+      <div class="row center-nav">
+        <div class="col-lg-3">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="https://www.audiophile.ph/catalog/view/theme/audiophile/image/audiophile.svg" alt=""></a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div id="search" class="input-group">
+            <input type="text" name="search" value="" placeholder="Search" class="form-control input-lg" />
+            <span class="input-group-btn">
+            <button type="button" id="top-btn-search" class="btn btn-default btn-lg icon-holder btn-search"><i class="icon-ios-search"></i></button>
+          </span>
+          </div>
+<script type="text/javascript">
+  $('#top-btn-search').on('click', function() {
+    var url = $('base').attr('href') + 'index.php?route=product/search';
+    var value = $('body input[name=\'search\']').val();
+
+    if (value) {
+      url += '&search=' + encodeURIComponent(value);
+    }
+
+    location = url;
+  });
+
+  $('#search input[name=\'search\']').on('keydown', function(e) {
+    if (e.keyCode == 13) {
+      $('body input[name=\'search\']').parent().find('button').trigger('click');
+    }
+  });
+</script>
+        </div>
+        <div class="col-lg-5">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-mobile-number">
+              <span class="icon-holder"><i class="icon-android-phone-portrait pull-left"></i></span>
+              <span class="pull-right">
+                <span class="nav-mobile-number-container">Telephone Number <br> (02) 8559 - 6819 </span>
+              </span>
+            </li>
+            <li>
+              <div id="cart" class="btn-group btn-block">
+                <button type="button" data-toggle="dropdown" class="btn btn-inverse btn-block btn-lg dropdown-toggle icon-holder btn-cart">
+                  <i class="icon-ios-cart-outline pull-left"></i> 
+                  <span class="pull-right cart-total-container" id="cart-total">
+                  SHOPPING CART <br>
+                  0 item(s) - ₱0.00    </span>
+                </button>
+                <ul class="dropdown-menu pull-right dropdown-cart-details">
+                <li><p class="text-center">Your shopping cart is empty!</p>
+                </li>
+              </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar nav-cat">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+              <li>
+                <a href="http://www.audiophile.ph/guitars">Guitars</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/basses">Basses</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/keyboards">Keyboards</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/drums">Drums</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/microphones">Microphones</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/mixers">Mixers</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/p.a.-speakers-amps">P.A. Speakers / Amps</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/soundprocessors">Sound Processors</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/personal-audio">Personal Audio</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/lights">Lights</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/connectors">Connectors</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/conference">Conference</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/onlineexclusive">Online Exclusive</a>
+              </li>
+              <li>
+                <a href="http://www.audiophile.ph/clearancesale">Clearance Sale</a>
+              </li>
+         </ul>
+        </div>
+    </nav>
+</nav>
+
+<!-- SLIDER --->
+<section id="carousel-container">
+  <div id="ap-carousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+              <li data-target="#ap-carousel" data-slide-to="0" class=""></li>
+              <li data-target="#ap-carousel" data-slide-to="1" class=""></li>
+              <li data-target="#ap-carousel" data-slide-to="2" class=""></li>
+              <li data-target="#ap-carousel" data-slide-to="3" class=""></li>
+              <li data-target="#ap-carousel" data-slide-to="4" class="active"></li>
+              <li data-target="#ap-carousel" data-slide-to="5" class=""></li>
+              <li data-target="#ap-carousel" data-slide-to="6" class=""></li>
+              <li data-target="#ap-carousel" data-slide-to="7" class=""></li>
+              <li data-target="#ap-carousel" data-slide-to="8" class=""></li>
+          </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+              <div class="item active">
+          <a href="https://www.audiophile.ph/stem-landing-page/">
+            <img src="https://www.audiophile.ph/image/cache/catalog/Carousel/Shure STEM Banner-1440x500.png" alt="SHURE STEM ECOSYSTEM ">
+          </a>
+          <div class="carousel-caption">
+            SHURE STEM ECOSYSTEM           </div>
+        </div>
+              <div class="item">
+          <a href="https://audiophile.ph/gioseries?product_id=1047">
+            <img src="https://www.audiophile.ph/image/cache/catalog/Carousel/GRG131EX-BKF-1440x500.jpg" alt="GRG131DX-BKF">
+          </a>
+          <div class="carousel-caption">
+            GRG131DX-BKF          </div>
+        </div>
+              <div class="item">
+          <a href="https://audiophile.ph/acousticdrums?product_id=2293">
+            <img src="https://www.audiophile.ph/image/cache/catalog/TAMA/LJK48P_CHM-1440x500.png" alt="TAMA CLUB-JAM PANCAKE LJK48P-CHM">
+          </a>
+          <div class="carousel-caption">
+            TAMA CLUB-JAM PANCAKE LJK48P-CHM          </div>
+        </div>
+              <div class="item">
+          <a href="https://audiophile.ph/gioseries?product_id=2233">
+            <img src="https://www.audiophile.ph/image/cache/catalog/Ibanez/GRGR221PA_AQB-1440x500.png" alt="GRGR221PA-AQB">
+          </a>
+          <div class="carousel-caption">
+            GRGR221PA-AQB          </div>
+        </div>
+              <div class="item">
+          <a href="https://www.youtube.com/watch?v=Q7CzVD7v9Y4">
+            <img src="https://www.audiophile.ph/image/cache/catalog/carousel/Ibanez-1440x500.jpg" alt="RG550">
+          </a>
+          <div class="carousel-caption">
+            RG550          </div>
+        </div>
+              <div class="item">
+          <a href="https://www.youtube.com/watch?v=nmouQzZfGMQ">
+            <img src="https://www.audiophile.ph/image/cache/catalog/Carousel/Hadiyah-1440x500.jpg" alt="Officially Missing You Cover by Hadiya">
+          </a>
+          <div class="carousel-caption">
+            Officially Missing You Cover by Hadiya          </div>
+        </div>
+              <div class="item">
+          <a href="https://www.audiophile.ph/headphones%20?product_id=2319">
+            <img src="https://www.audiophile.ph/image/cache/catalog/Shure/Aonic 40 Banner-1440x500.jpg" alt="Shure AONIC 40">
+          </a>
+          <div class="carousel-caption">
+            Shure AONIC 40</div>
+           </div>
+              <div class="item">
+          <a href="https://www.audiophile.ph/connectors">
+            <img src="https://www.audiophile.ph/image/cache/catalog/Rean/Rean Banner-1440x500.jpg" alt="Rean">
+          </a>
+          <div class="carousel-caption">
+            Rean          </div>
+        </div>
+              <div class="item">
+          <a href="https://audiophile.ph/index.php?route=product/product&amp;product_id=1569&amp;search=EK-50">
+            <img src="https://www.audiophile.ph/image/cache/catalog/MASSI Products/Korg/EK-50_1-1440x500.png" alt="Korg EK-50">
+          </a>
+          <div class="carousel-caption">
+            Korg EK-50          </div>
+        </div>
+          </div>
+
+    <!-- Controls -->
+    <div class="control-box">
+      <a class="left carousel-control" href="#ap-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+      <a class="right carousel-control" href="#ap-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+      <!--<a data-slide="prev" href="#ap-carousel" class="carousel-control left">‹</a>
+      <a data-slide="next" href="#ap-carousel" class="carousel-control right">›</a>-->
+    </div>
+  </div>
+</section>
+<section>
+  <div class="row">
+      <div class="col-lg-12">
+        <h2 class="text-center line-behind"><span>FEATURED PRODUCTS</span></h2>
+      </div>
+</div>
+  <div class="row">
+  <div class="contenedor text-center">
+     <div class="text-center">
+      <div class="col-md-6 col-sm-6 col-md-3 container_foto">
+        <div class="ver_mas text-center">
+            <span>READ MORE</span>
+        </div>        
+          <article class="text-left">
+             <h2>Ibanez RG550-DY MADE IN JAPAN <br> Electric Guitar </h2>
+             <h4>Price: Php 55,990.00</h4>
+          </article>
+          <img src="https://raw.githubusercontent.com/pinoynukerz/html/main/800x1000_guitar.jpg" alt="">
+
+     </div>
+     <div class="col-md-6 col-sm-6 col-md-3 container_foto">
+        <div class="ver_mas text-center">
+            <span>READ MORE</span>
+        </div>
+        <article class="text-left">
+           <h2>SHURE AONIC 215 <br> True Wireless Sound Isolating Earbuds</h2>
+           <h4>Price: Php 12,980.00</h4>
+        </article>
+        <img src="https://raw.githubusercontent.com/pinoynukerz/html/main/800x1000_personal.jpg" alt="">
+     </div>
+     <div class="col-md-6 col-sm-6 col-md-3 container_foto">
+        <div class="ver_mas text-center">
+            <span>READ MORE</span>
+        </div>
+        <article class="text-left">
+           <h2>SHURE MOTIV™ <br> MV5C Home Office & Conferencing USB Mic</h2>
+           <h4>Price: Php 6,980.00</h4>
+        </article>
+        <img src="https://raw.githubusercontent.com/pinoynukerz/html/main/800x1000_microphone.jpg" alt="">
+     </div>
+     <div class="col-md-6 col-sm-6 col-md-3 container_foto">
+        <div class="ver_mas text-center">
+            <span>READ MORE</span>
+        </div>
+        <article class="text-left">
+           <h2>KORG Kross2-61<br> The mobile synthesizer workstation</h2>
+           <h4>Price: Php 39,880.00</h4>
+        </article>
+        <img src="https://raw.githubusercontent.com/pinoynukerz/html/main/800x1000_keyboard.jpg" alt="">
+     </div>
+     </div>
+  </div>
+</div>
+</section>
+<div class="container">
+  <div class="row">
+    <div class="nav-center">
+      <ul class="nav nav-tabs nav-product-choice" role="tablist">
+        <li role="presentation" class="active"><a href="#new-products" aria-controls="new-products" role="tab" data-toggle="tab">New Products</a></li>
+        <li> <span class="divider"></span></li>
+        <li role="presentation"><a href="#top-products" aria-controls="top-products" role="tab" data-toggle="tab">Top Products</a></li>
+      </ul>
+    </div>
+
+    <div class="tab-content product-select">
+       <div role="tabpanel" class="tp-select tab-pane fade active in" id="new-products">
+          <div class="carousel slide container-fluid" id="myCarousel">
+             <div class="carousel-inner">
+                    <!-- /Slide1 --> 
+                    <div class="item active">
+                      <div class="col-sm-6 col-lg-3">
+                        <div class="media tp">
+                          <div class="media-left">
+                            <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2394">
+                              <img alt="" src="http://www.audiophile.ph/image/cache/catalog/TAMA/TDK10BN-102x102.png">
+                            </a>
+                          </div>
+                          <div class="media-body tp-body">
+                            <h4 class="media-heading">TAMA TDK10BN DRUM KEY BLACK NICKEL</h4>
+                            <span class="price">₱390.00</span>
+                            <div class="ico-wrapper clearfix">
+                              <form action="" class="form-inline">
+                                <input type="hidden" name="product_id" value="2394">
+                                <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                                  <i class="icon-ios-cart"></i>
+                                </button>
+                              <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2394" role="button" class="btn btn-view-items">
+                                <i class="icon-ios-search-strong"></i>
+                              </a>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-lg-3">
+                        <div class="media tp">
+                          <div class="media-left">
+                            <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2393">
+                              <img alt="" src="http://www.audiophile.ph/image/cache/catalog/TAMA/TDK10-102x102.png">
+                            </a>
+                          </div>
+                          <div class="media-body tp-body">
+                            <h4 class="media-heading">TAMA TDK10 DRUM KEY</h4>
+                            <span class="price">₱340.00</span>
+                            <div class="ico-wrapper clearfix">
+                              <form action="" class="form-inline">
+                                <input type="hidden" name="product_id" value="2393">
+                                <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                                  <i class="icon-ios-cart"></i>
+                                </button>
+                              <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2393" role="button" class="btn btn-view-items">
+                                <i class="icon-ios-search-strong"></i>
+                              </a>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-lg-3">
+                        <div class="media tp">
+                          <div class="media-left">
+                            <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2392">
+                              <img alt="" src="http://www.audiophile.ph/image/cache/catalog/TAMA/HS40PWN-102x102.png">
+                            </a>
+                          </div>
+                          <div class="media-body tp-body">
+                            <h4 class="media-heading">TAMA HS40PWN PICOLO SNARE DRUM</h4>
+                            <span class="price">₱4,990.00</span>
+                            <div class="ico-wrapper clearfix">
+                              <form action="" class="form-inline">
+                                <input type="hidden" name="product_id" value="2392">
+                                <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                                  <i class="icon-ios-cart"></i>
+                                </button>
+                              <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2392" role="button" class="btn btn-view-items">
+                                <i class="icon-ios-search-strong"></i>
+                              </a>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-lg-3">
+                        <div class="media tp">
+                          <div class="media-left">
+                            <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2391">
+                              <img alt="" src="http://www.audiophile.ph/image/cache/catalog/Ibanez/4450LX-102x102.jpg">
+                            </a>
+                          </div>
+                          <div class="media-body tp-body">
+                            <h4 class="media-heading">Ibanez 4450LX Fret File</h4>
+                            <span class="price">₱1,790.00</span>
+                            <div class="ico-wrapper clearfix">
+                              <form action="" class="form-inline">
+                                <input type="hidden" name="product_id" value="2391">
+                                <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                                  <i class="icon-ios-cart"></i>
+                                </button>
+                              <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2391" role="button" class="btn btn-view-items">
+                                <i class="icon-ios-search-strong"></i>
+                              </a>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /Slide2 -->
+                    <div class="item">
+                      <div class="col-sm-6 col-lg-3">
+                        <div class="media tp">
+                          <div class="media-left">
+                            <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2390">
+                              <img alt="" src="http://www.audiophile.ph/image/cache/catalog/Shure/STEMHUBX1-102x102.jpg">
+                            </a>
+                          </div>
+                          <div class="media-body tp-body">
+                            <h4 class="media-heading">SHURE STEM HUBX1</h4>
+                            <span class="price">₱28,900.00</span>
+                            <div class="ico-wrapper clearfix">
+                              <form action="" class="form-inline">
+                                <input type="hidden" name="product_id" value="2390">
+                                <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                                  <i class="icon-ios-cart"></i>
+                                </button>
+                              <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2390" role="button" class="btn btn-view-items">
+                                <i class="icon-ios-search-strong"></i>
+                              </a>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-lg-3">
+                        <div class="media tp">
+                          <div class="media-left">
+                            <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2389">
+                              <img alt="" src="http://www.audiophile.ph/image/cache/catalog/Shure/STEMHUB1-102x102.jpg">
+                            </a>
+                          </div>
+                          <div class="media-body tp-body">
+                            <h4 class="media-heading">SHURE STEM HUB1</h4>
+                            <span class="price">₱36,800.00</span>
+                            <div class="ico-wrapper clearfix">
+                              <form action="" class="form-inline">
+                                <input type="hidden" name="product_id" value="2389">
+                                <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                                  <i class="icon-ios-cart"></i>
+                                </button>
+                              <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2389" role="button" class="btn btn-view-items">
+                                <i class="icon-ios-search-strong"></i>
+                              </a>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-lg-3">
+                        <div class="media tp">
+                          <div class="media-left">
+                            <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2388">
+                              <img alt="" src="http://www.audiophile.ph/image/cache/catalog/Shure/STEMSPEAKER1jpg-102x102.jpg">
+                            </a>
+                          </div>
+                          <div class="media-body tp-body">
+                            <h4 class="media-heading">SHURE STEM SPEAKER1</h4>
+                            <span class="price">₱43,600.00</span>
+                            <div class="ico-wrapper clearfix">
+                              <form action="" class="form-inline">
+                                <input type="hidden" name="product_id" value="2388">
+                                <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                                  <i class="icon-ios-cart"></i>
+                                </button>
+                              <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2388" role="button" class="btn btn-view-items">
+                                <i class="icon-ios-search-strong"></i>
+                              </a>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-lg-3">
+                        <div class="media tp">
+                          <div class="media-left">
+                            <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2387">
+                              <img alt="" src="http://www.audiophile.ph/image/cache/catalog/Shure/STEMCONTROL1-102x102.jpg">
+                            </a>
+                          </div>
+                          <div class="media-body tp-body">
+                            <h4 class="media-heading">SHURE STEM CONTROL1</h4>
+                            <span class="price">₱86,600.00</span>
+                            <div class="ico-wrapper clearfix">
+                              <form action="" class="form-inline">
+                                <input type="hidden" name="product_id" value="2387">
+                                <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                                  <i class="icon-ios-cart"></i>
+                                </button>
+                              <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2387" role="button" class="btn btn-view-items">
+                                <i class="icon-ios-search-strong"></i>
+                              </a>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+</div>
+             <div class="control-box">                            
+                    <a data-slide="prev" href="#myCarousel" class="carousel-control-tab left">‹</a>
+                    <a data-slide="next" href="#myCarousel" class="carousel-control-tab right">›</a>
+              </div>
+          </div>
+        </div>
+       <div role="tabpanel" class="tp-select tab-pane fade" id="top-products">
+        <div class="col-sm-4 col-md-3 col-lg-2">
+            <div class="media tp">
+              <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2165">
+                  <img alt="SHURE MV7-K-BNDL Podcast Microphone Bundle" src="http://www.audiophile.ph/image/cache/catalog/Shure/MV7-K-BNDL-102x102.jpg">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">SHURE MV7-K-BNDL Podcast Microphone Bundle</h4>
+                <span class="price">₱17,500.00</span>
+                <div class="ico-wrapper clearfix">
+                  <form action="" class="form-inline">
+                    <input type="hidden" name="product_id" value="2165" />
+                    <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                      <i class="icon-ios-cart"></i>
+                    </button>
+                  <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2165" role="button" class="btn btn-view-items">
+                    <i class="icon-ios-search-strong"></i>
+                  </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-sm-4 col-md-3 col-lg-2">
+            <div class="media tp">
+              <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2188">
+                  <img alt="SHURE MV7X Podcast XLR Microphone" src="http://www.audiophile.ph/image/cache/catalog/Shure/MV7X-102x102.jpg">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">SHURE MV7X Podcast XLR Microphone</h4>
+                <span class="price">₱10,980.00</span>
+                <div class="ico-wrapper clearfix">
+                  <form action="" class="form-inline">
+                    <input type="hidden" name="product_id" value="2188" />
+                    <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                      <i class="icon-ios-cart"></i>
+                    </button>
+                  <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2188" role="button" class="btn btn-view-items">
+                    <i class="icon-ios-search-strong"></i>
+                  </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-sm-4 col-md-3 col-lg-2">
+            <div class="media tp">
+              <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2206">
+                  <img alt="SHURE AONIC 215 TW2 True Wireless Sound Isolating Earbuds (Black) SE21DYBK+TW2-A" src="http://www.audiophile.ph/image/cache/catalog/Shure/AONIC215-TW2-102x102.jpg">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">SHURE AONIC 215 TW2 True Wireless Sound Isolating Earbuds (Black) SE21DYBK+TW2-A</h4>
+                <span class="price">₱12,980.00</span>
+                <div class="ico-wrapper clearfix">
+                  <form action="" class="form-inline">
+                    <input type="hidden" name="product_id" value="2206" />
+                    <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                      <i class="icon-ios-cart"></i>
+                    </button>
+                  <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=2206" role="button" class="btn btn-view-items">
+                    <i class="icon-ios-search-strong"></i>
+                  </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-sm-4 col-md-3 col-lg-2">
+            <div class="media tp">
+              <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=1164">
+                  <img alt="SHURE 55SH Series II Iconic Unidyne Vocal Microphone" src="http://www.audiophile.ph/image/cache/catalog/55shII-102x102.jpg">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">SHURE 55SH Series II Iconic Unidyne Vocal Microphone</h4>
+                <span class="price">₱11,800.00</span>
+                <div class="ico-wrapper clearfix">
+                  <form action="" class="form-inline">
+                    <input type="hidden" name="product_id" value="1164" />
+                    <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                      <i class="icon-ios-cart"></i>
+                    </button>
+                  <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=1164" role="button" class="btn btn-view-items">
+                    <i class="icon-ios-search-strong"></i>
+                  </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-sm-4 col-md-3 col-lg-2">
+            <div class="media tp">
+              <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=1813">
+                  <img alt="SHURE SM7B Vocal Microphone" src="http://www.audiophile.ph/image/cache/catalog/Shure/SM7B-102x102.jpg">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">SHURE SM7B Vocal Microphone</h4>
+                <span class="price">₱27,600.00</span>
+                <div class="ico-wrapper clearfix">
+                  <form action="" class="form-inline">
+                    <input type="hidden" name="product_id" value="1813" />
+                    <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                      <i class="icon-ios-cart"></i>
+                    </button>
+                  <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=1813" role="button" class="btn btn-view-items">
+                    <i class="icon-ios-search-strong"></i>
+                  </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-sm-4 col-md-3 col-lg-2">
+            <div class="media tp">
+              <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=1929">
+                  <img alt="SHURE AONIC 215 Wired Sound Isolating Earbuds (Black)" src="http://www.audiophile.ph/image/cache/catalog/Shure/SE215DYBK+UNI-A-102x102.jpg">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">SHURE AONIC 215 Wired Sound Isolating Earbuds (Black)</h4>
+                <span class="price">₱5,990.00</span>
+                <div class="ico-wrapper clearfix">
+                  <form action="" class="form-inline">
+                    <input type="hidden" name="product_id" value="1929" />
+                    <button type="button" id="button-cart" class="btn btn-tp btn-add-cart">
+                      <i class="icon-ios-cart"></i>
+                    </button>
+                  <a href="http://www.audiophile.ph/index.php?route=product/product&amp;product_id=1929" role="button" class="btn btn-view-items">
+                    <i class="icon-ios-search-strong"></i>
+                  </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+     </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+       <h2 class="text-center line-behind"><span>BRANDS</span></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <div class="col-sm-4 col-lg-2 col-md-4">
+          <div class="brand_tp">
+          <a href="http://www.audiophile.ph/clear-com"><img src="https://www.audiophile.ph/image/cache/catalog/Clear-Com-170x80.jpg" alt="Clear-Com"></a>
+      </div>
+</div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+        <div class="brand_tp">
+          <a href="http://www.audiophile.ph/crown"><img src="http://www.audiophile.ph/image/cache/catalog/crown-170x80.png" alt="Crown"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4"> 
+        <div class="brand_tp">
+        <a href="http://www.audiophile.ph/dbx"><img src="http://www.audiophile.ph/image/cache/catalog/DBX-170x80.jpg" alt="DBX"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+        <div class="brand_tp">
+        <a href="http://www.audiophile.ph/digitech"><img src="http://www.audiophile.ph/image/cache/catalog/digitech-170x80.png" alt="Digitech"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+        <div class="brand_tp">
+        <a href="http://www.audiophile.ph/dimarzio"><img src="http://www.audiophile.ph/image/cache/catalog/Dimarzio-170x80.jpg" alt="Dimarzio "></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+        <div class="brand_tp">
+        <a href="http://www.audiophile.ph/index.php?route=product/manufacturer/info&amp;manufacturer_id=37"><img src="" alt="Gator Cases"></a>
+       </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+        <div class="brand_tp">
+        <a href="http://www.audiophile.ph/hartke"><img src="http://www.audiophile.ph/image/cache/catalog/Hartke-170x80.jpg" alt="Hartke "></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/index.php?route=product/manufacturer/info&amp;manufacturer_id=35"><img src="http://www.audiophile.ph/image/cache/catalog/HH Electronics/HHlogo-170x80.png" alt="HH Eelctronics"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/honeywell"><img src="" alt="Honeywell"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/hotone"><img src="http://www.audiophile.ph/image/cache/catalog/17349479_10155168141811289_705651754_o-170x80.png" alt="Hotone "></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/ibanez"><img src="http://www.audiophile.ph/image/cache/catalog/ibanez-170x80.png" alt="Ibanez"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/jbl"><img src="http://www.audiophile.ph/image/cache/catalog/jbl-170x80.png" alt="JBL"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/korg"><img src="http://www.audiophile.ph/image/cache/catalog/korg-170x80.png" alt="Korg"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/lexicon"><img src="http://www.audiophile.ph/image/cache/catalog/Lexicon-170x80.png" alt="Lexicon "></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/martin"><img src="http://www.audiophile.ph/image/cache/catalog/Martin_Harman_RGB_neg-170x80.jpg" alt="Martin"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/neutrik"><img src="http://www.audiophile.ph/image/cache/catalog/Neutrik-170x80.jpg" alt="Neutrik "></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4"> <div class="brand_tp">
+        <a href="http://www.audiophile.ph/paiste"><img src="http://www.audiophile.ph/image/cache/catalog/Paiste-170x80.jpg" alt="Paiste"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/quik-lok"><img src="http://www.audiophile.ph/image/cache/catalog/QUIK-lOK-170x80.jpg" alt="Quik-Lok "></a>
+      </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/rean"><img src="http://www.audiophile.ph/image/cache/catalog/Rean/rean-logo-170x80.png" alt="REAN"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/index.php?route=product/manufacturer/info&amp;manufacturer_id=36"><img src="" alt="Samson"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/seymourduncan"><img src="http://www.audiophile.ph/image/cache/catalog/seymour-duncan-170x80.png" alt="Seymour Duncan"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/shure"><img src="http://www.audiophile.ph/image/cache/catalog/Shure/Shure-Logo-01-170x80.jpg" alt="Shure"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/soundcraft"><img src="http://www.audiophile.ph/image/cache/catalog/soundcraft-170x80.png" alt="Soundcraft"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/tama"><img src="http://www.audiophile.ph/image/cache/catalog/tama-170x80.png" alt="Tama"></a>
+        </div></div>
+      <div class="col-sm-4 col-lg-2 col-md-4">
+         <div class="brand_tp">
+        <a href="http://www.audiophile.ph/vox"><img src="http://www.audiophile.ph/image/cache/catalog/vox-170x80.png" alt="Vox"></a>
+        </div></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+<section id="events">
+   <div class="row">
+    <div class="col-lg-12">
+       <h2 class="text-center line-behind">
+       <span>EVENTS</span>
+       </h2>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-6 col-lg-2 col-md-4">
+      <div class="media">
+        <div class="media-left">
+          <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=73">
+            <img class="media-object" src="https://www.audiophile.ph/image/cache/catalog/Events/NEW/12-200x250.jpg" alt="...">
+          </a>
+        </div>
+        <div class="media-body" style="display: inline-block;">
+          <h4 class="media-heading">Shure Be Extraordinary Virtual Run!</h4>
+          <!--<div><p>Run period is from January 19 to 24, 2021.</p>...</div>-->
+          <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=73">MORE DETAILS...</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+      <div class="media">
+        <div class="media-left">
+          <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=62">
+            <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/3-200x250.jpg" alt="...">
+          </a>
+        </div>
+        <div class="media-body" style="display: inline-block;">
+          <h4 class="media-heading">Martin Miller &amp; Tom Quayle Clinic Tour 2019</h4>
+          <!--<div><p><b>Martin Miller & Tom Quayle </b><br><br>April 11, 2019<br>Johnny B. Good, Level 3 Glorietta 3, Ayala Center, Makati City.</p>...</div>-->
+          <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=62">MORE DETAILS...</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+      <div class="media">
+        <div class="media-left">
+          <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=63">
+          <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/4-200x250.png" alt="...">
+          </a>
+        </div>
+        <div class="media-body" style="display: inline-block;">
+          <h4 class="media-heading">Andy Timmons Ibanez Clinic Tour 2018</h4>
+          <!--<div><p><b>Andy Timmons Ibanez Clinic Tour 2018<br></b><br>August 15, 2018<br>Chef & Brewer, Macapagal, Pasay City.<br></p>...</div>-->
+          <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=63">MORE DETAILS...</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+      <div class="media">
+         <div class="media-left">
+            <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=60">
+                <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/1-200x250.jpg" alt="...">
+            </a>
+         </div>
+         <div class="media-body" style="display: inline-block;">
+            <h4 class="media-heading">Virtual Launch of SLX-D Digital Wireless Systems</h4>
+            <!--<div><p><b>Virtual Launch of SLX-D Digital Wireless System</b><br><br>August 11, 2020 3:00PM-4:30PM</p>...</div>-->
+            <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=60">MORE DETAILS...</a>
+         </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+      <div class="media">
+        <div class="media-left">
+            <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=64">
+            <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/6-200x250.jpg" alt="...">
+            </a>
+        </div>
+        <div class="media-body" style="display: inline-block;">
+            <h4 class="media-heading">Shure MXA Launch PH</h4>
+            <!--<div><p><b>New Product Demonstration & Networking Events</b><br>Shure Microflex Advance Microphones</p>...</div>-->
+            <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=64">MORE DETAILS...</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+        <div class="media">
+            <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=65">
+                  <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/7-200x250.jpg" alt="...">
+                </a>
+            </div>
+            <div class="media-body" style="display: inline-block;">
+              <h4 class="media-heading">Polyphia Ibanez Clinic Tour 2017</h4>
+              <!--<div><p><b>Tim Henson &amp; Scott LePage<br></b><br>May 24, 2017<br>Cowboy Grill, Quezon City</p>...</div>-->
+              <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=65">MORE DETAILS...</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+        <div class="media">
+            <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=66">
+                  <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/8-200x250.png" alt="...">
+                </a>
+            </div>
+            <div class="media-body" style="display: inline-block;">
+                <h4 class="media-heading">Musik Manila 2016</h4>
+                  <!--<div><p><b>Musik Manila 2016<br></b>August 16-17, 2016<br>World Trade Convention Center!</p>...</div>-->
+                <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=66">MORE DETAILS...</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+        <div class="media">
+            <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=67">
+                <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/9-200x250.jpg" alt="...">
+                </a>
+            </div>
+            <div class="media-body" style="display: inline-block;">
+                <h4 class="media-heading">Tosin Abasi Guitar Clinic Tour 2015</h4>
+                <!--<div><p><b>Tosin Abasi Guitar Clinic Tour 2015<br></b><br>May 25, 2015<br>Hard Rock Cafe, Makati</p>...</div>-->
+                <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=67">MORE DETAILS...</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+      <div class="media">
+          <div class="media-left">
+            <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=68">
+              <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/10-200x250.jpg" alt="...">
+            </a>
+          </div>
+          <div class="media-body" style="display: inline-block;">
+              <h4 class="media-heading">Kiko Loureiro Guitar Clinic Tour 2014</h4>
+              <!--<div><p><b>Kiko Loureiro Guitar Clinic Tour 2014<br></b><br>April 24, 2014<br>The Hard Rock Cafe, Makati</p>...</div>-->
+              <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=68">MORE DETAILS...</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+        <div class="media">
+            <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=69">
+                    <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/5-200x250.png" alt="...">
+                </a>
+            </div>
+            <div class="media-body" style="display: inline-block;">
+              <h4 class="media-heading">HARMAN Professional Solutions Fuels the Rhythm and Soul of Cuban</h4>
+              <!--<div>March 16, 2018...</div>-->
+              <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=69">MORE DETAILS...</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+        <div class="media">
+            <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=70">
+                    <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/11-200x250.jpg" alt="...">
+                </a>
+            </div>
+            <div class="media-body" style="display: inline-block;">
+                <h4 class="media-heading">An Exclusive Webinar Invitations Awaits You</h4>
+                <!--<div><p>Premium Audio For Conference Systems<br>November 26, 2020<br><br>Bring Studio Quality Sound Into Your Home<br>December 3, 2020<br><br>Every Voice Matters: Audio Tools and Applic...</div>-->
+                <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=70">MORE DETAILS...</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-2 col-md-4">
+        <div class="media">
+            <div class="media-left">
+                <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=61">
+                  <img class="media-object" src="http://www.audiophile.ph/image/cache/catalog/Events/NEW/2-200x250.jpg" alt="...">
+                </a>
+            </div>
+            <div class="media-body" style="display: inline-block;">
+              <h4 class="media-heading">Anika Nilles Clinic Tour 2019</h4>
+              <!--<div><p><b>Anika Nilles Clinic Tour 2019<br></b><br>May 21, 2019<br>Johnny B. Good, Level 3 Glorietta 3, Ayala Center, Makati City.<br><br></p>...</div>-->
+              <a href="http://www.audiophile.ph/index.php?route=events_page/events_page&amp;event_id=61">MORE DETAILS...</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+</div>
+<!-- partial -->
+  <script src='https://www.audiophile.ph/catalog/view/javascript/jquery/jquery-2.1.1.min.js'></script>
+<script src='https://www.audiophile.ph/catalog/view/javascript/jquery.elevatezoom.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js'></script>
+</body>
+</html>
